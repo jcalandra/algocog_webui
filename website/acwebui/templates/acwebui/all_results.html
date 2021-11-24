@@ -1,0 +1,76 @@
+
+{% extends 'layouts/base_bgimg.html' %}
+
+{% block title %}Application - Parametres{% endblock %}
+
+{% block content %}
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">L'algorithme cognitif - Interface web</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="py-5 mb-5">
+    <div class="container h-100">
+      <div class="row">
+      	<h1>Ensemble des résultats : </h1>
+ 	  </div>
+
+    </div>
+  </header>
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-5 mb-5 justify transparentbg1">
+
+    {% for element in dataParameter %}
+      File : {{ element.file}}<br>
+      Similarity Threshold : {{ element.sim_threshold}}<br>
+      Segmentation Threshold : {{ element.seg_threshold}}<br>
+      FFT : {{ element.fft}}<br>
+      CQT : {{ element.cqt}}<br>
+      MFCC : {{ element.mfcc}}<br>
+      Color similarity materials Threshold : {{ element.sim_materials}}<br>
+      Differancial Fourier Transform : {{ element.diff_fourier}}<br>
+      Differancial Dynamic : {{ element.diff_dynamic}}<br>
+      Strict Equality : {{ element.strict_equality}}<br>
+      Alignement : {{ element.alignement}}<br>
+      Differential Concordance : {{ element.diff_concordance}}<br>
+      Rule 1 : {{ element.rule_1}}<br>
+      Rule 2 : {{ element.rule_2}}<br>
+      Rule 3 : {{ element.rule_3}}<br>
+      Rule 4 : {{ element.rule_4}}<br>
+      Rule 5 : {{ element.rule_5}}<br>
+      Display Transitory Frames : {{ element.transitory_frame}}<br>
+      --------------------------------<br>
+
+    {% endfor %}
+
+        </div>
+
+       <div class="offset-md-1 col-md-6 mb-5 justify transparentbg1">
+         <h2>Laissez un commentaire sur l'analyse obtenue:</h2>
+         <p> Vous pouvez laisser un commentaire sur les résultats obtenus avec le système sur l'oeuvre que vous souhaitez
+         analyser. Pour rappel, un paramétrage différent donne une analyse différente. Nous vous encourageons à tester
+         différents seuils si les résultats obtenus ne vous conviennent pas. Les seuils peuvent être très sensibles !</p>
+         <p>Si vous le souhaitez, vous pouvez laisser votre nom, prénom et mail afin que  l'on puisse vous recontacter,
+           mais ce n'est pas obligatoire.</p>
+         <form method="POST" class = "post-form">
+                {%  csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="save btn">Envoyer le commentaire</button>
+            </form>
+       </div>
+    </div>
+
+
+    <!-- /.row -->
+    <div class="row">
+    </div>
+  </div>
+{% endblock %}

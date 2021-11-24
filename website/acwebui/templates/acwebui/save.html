@@ -1,0 +1,104 @@
+{% extends 'layouts/base_bgimg.html' %}
+
+{% block title %}Application - Parametres{% endblock %}
+
+{% block content %}
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">L'algorithme cognitif - Interface web</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="py-5 mb-5">
+    <div class="container h-100">
+      <div class="row">
+      	<h1>Paramètres :</h1>
+ 	  </div>
+
+    </div>
+  </header>
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-8 mb-5 justify transparentbg1">
+       <p>
+       Selon François Delalande [1], l'écoute musicale est différente pour
+       chaque personne qui écoute une même œuvre musicale. La représentation
+       structurelle qui découle de l'écoute dépend des différents critères
+      auxquels la personne qui écoute est sensibilisée. On souhaite que le
+       système puisse proposer ces différentes présentations dépendamment des
+       choix de l'utilisateur. Pour cela, on
+       défini l'<I>agenda</I> qui correspond à l'ensemble des paramètres
+       définis permettant de construire une représentation de l'œuvre musicale.<br>
+       On propose donc un système paramétrable et l'utilisateur doit tout
+       d'abord spécifier l'ensemble des paramètres avant de procéder au calcul
+       des diagrammes formels hiérarchisés avec l'algorithme cognitif.
+       </p>
+       <p>[1] Delalande, F. La musique au-delà des notes. Presse Universitaires
+         de Rennes, 2019.</p>
+
+      </div>
+
+      <div class="offset-md-1 col-md-3 mb-5">
+        <p>
+
+        </p>
+      </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-md-8 mb-5 justify transparentbg2">
+          <h2>Votre analyse : </h2>
+          <p>
+          <span style="font-weight:bold">Fichier à analyser</span><br>
+          File : {{ element.file}}<br>
+          <br>
+          <span style="font-weight:bold">Seuils</span><br>
+          Similarity Threshold : {{ element.sim_threshold}}<br>
+          Segmentation Threshold : {{ element.seg_threshold}}<br>
+          Color similarity materials Threshold : {{ element.sim_materials}}<br>
+          <br>
+          <span style="font-weight:bold">Descripteurs</span><br>
+          FFT : {{ element.fft}}<br>
+          CQT : {{ element.cqt}}<br>
+          MFCC : {{ element.mfcc}}<br>
+          <br>
+          <span style="font-weight:bold">Similarité du signal</span><br>
+          Differential Concordance : {{ element.diff_concordance}}<br>
+          Euclidian Distance : {{ element.euclid_distance}}<br>
+                    <br>
+          <span style="font-weight:bold">Similarité symbolique</span><br>
+          Strict Equality : {{ element.strict_equality}}<br>
+          Alignment : {{ element.alignment}}<br>
+          <br>
+          <span style="font-weight:bold">Segmentation du signal</span><br>
+          Differancial Fourier Transform : {{ element.diff_fourier}}<br>
+          Differanciel Dynamic : {{ element.diff_dynamic}}<br>
+          <br>
+          <span style="font-weight:bold">Segmentation symbolique</span><br>
+          Rule 1 (similarity) : {{ element.rule_1}}<br>
+          Rule 2 (validated hypothesis) : {{ element.rule_2}}<br>
+          Rule 3 (existing object) : {{ element.rule_3}}<br>
+          Rule 4 (recomputed object) : {{ element.rule_4}}<br>
+          Rule 5 (regathering) : {{ element.rule_5}}<br>
+          <br>
+          <span style="font-weight:bold">Transitions</span><br>
+          Display Transitory Frames : {{ element.transitory_frame}}</p>
+          <a class="btn btn-primary btn-lg" href="{% url 'acwebui:result' %}">Tester le logiciel &raquo;</a><br><br>
+          <p>Sachez que les calculs peuvent prendre de quelques minutes à plusieurs
+              heures... Merci pour votre patience!</p>
+
+      </div>
+    </div>
+
+
+    <!-- /.row -->
+    <div class="row">
+    </div>
+  </div>
+{% endblock %}

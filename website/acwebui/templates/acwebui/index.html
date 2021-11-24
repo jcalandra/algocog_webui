@@ -1,0 +1,185 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %}Application - Algorithme Cognitif{% endblock %}
+
+{% block content %}
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">L'algorithme cognitif - Interface web</a>
+      <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Accueil<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fr/apropos-fr.html">À propos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fr/formation-fr.html">Formation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fr/these-fr.html">Thèse</a>
+          </li>
+          <li><a class="btn btn-primary" href="index-en.html">EN</a></li>
+        </ul>
+      </div>-->
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-image-full py-5 mb-5" >
+    <div class="container h-120">
+      <div class="row h-100 align-items-center">
+     		<div class="col-md-8">
+        		<h1 class="display-4 text-white mt-5 mb-2 nopadding">L'algorithme
+              cognitif</h1>
+          		<p class="lead mb-5 justify" style="color:white; opacity:0.95">
+                <b>Bienvenue sur l'interface web de l'algorithme cognitif !<br>
+                L'algorithme cognitif est
+                une modélisation de l'écoute musicale selon les contraintes
+                temporelles de l'audio.
+                Nous proposons un logiciel d'analyse musicale qui fournit une
+                représentation formelle de fichiers audio à partir de l'analyse
+                paradigmatique de l'œuvre. <br>
+          		Venez tester le logiciel !</b>
+          		</p>
+          	</div>
+
+          <div class="col-md-4">
+          		<img class="img-fluid d-block mx-auto col-md-10 jcalandra_img" src="{% static 'img/df.JPG' %}" alt="Schéma stylisé de diagramme formel">
+     		</div>
+        </div>
+
+    </div>
+    <div class="row h-20 degrade">
+    </div>
+  </header>
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-8 mb-5">
+        <h2> Qu'est-ce que l'algorithme cognitif ?</h2>
+        <hr>
+        <p class = "justify">
+          L'algorithme cognitif est un un modèle qui permet de structurer et
+          d’effectuer une analyse paradigmatique de l'œuvre  musicale dans la
+          continuité des théories linguistiques de Ferdinand de Saussure [1]. Il
+          consiste donc à étudier les éléments de l'œuvre et les relations entre
+           ceux-ci.
+        </p>
+        <p class = "justify">
+          On cherche par cette analyse à mieux comprendre les
+          phénomènes d'attention, entre autre la validation ou non des
+          hypothèses effectuées par l'auditeur ainsi que les effets de surprise.
+        </p>
+        <p class = "justify"> Le développement de ce logiciel s'inscrit dans le cadre d'une thèse interdisciplinaire
+          effectuée par Joséphine Calandra, encadrée par Jean-Marc Chouvel au
+          sein de L'Institut de Recherche en Musicologie et Myriam
+          Desainte-Catherine au sein du Laboratoire Bordelais de Recherche en
+          Informatique. On cherche ici à automatiser L'algorithme Cogntif tel
+          qu'il a pu être proposé par Jean-Marc Chouvel en 1990 [2].
+        </p>
+        <p>[1] De Saussure, F. <I>Cours de linguistique générale.</I> Payot, Paris, 1906. <br>
+          [2] Chouvel, J-M. <I>Sur la theorie de la forme et ses implications dans la creation musicale contemporaine</I>, Université Paris 8, 1990.</p>
+
+        <a class="btn btn-primary btn-lg" href="{% url 'these-fr' %}">En savoir plus &raquo;</a>
+      </div>
+      <div class="col-md-4 mb-5">
+        <h2>Contact</h2>
+        <hr>
+        <address>
+          <strong>LaBRI</strong>
+          <br>Bureau 104, Bat A30
+          <br>351, cours de la Libération
+          <br>F-33405 Talence Cedex
+        </address>
+        <address>
+          <a href="mailto:josephine.calandra@labri.fr">josephine.calandra@labri.fr</a>
+        </address>
+      </div>
+    </div>
+
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-md-6 mb-5">
+        <p style="text-align:center;">
+        <img class="img-fluid d-block mx-auto col-md-8 " src="{% static 'img/interface_visite.JPG' %}" alt="interface paramètres">
+<br>
+        <img class="img-fluid d-block mx-auto col-md-8 " src="{% static 'img/interface.JPG' %}" alt="interface">
+        maquettes de l'interface ergonomique.
+        <br>
+      </p>
+      </div>
+      <div class="col-md-6 mb-5">
+        <p class = "justify">
+        Cette interface web est un prototype non ergonomique de l'application à venir.
+        En effet, nous souhaitons proposer au plus tôt une interface
+        simplifiée, afin d'obtenir des premiers retours de résultats obtenus
+        avec l'algorithme cognitif.
+      </p>
+      <p class = "justify">
+        Dans un premier temps, les résultats sont proposées sous forme de
+        succession de diagrammes en 2 dimensions. Nous pensons proposer dans
+        l'interface définitive une représentation en 3 dimensions qui
+        expliciterait les connexions entre les éléments des différents
+        diagrammes. </p>
+        <p class = "justify"> Un diagramme est appelé diagramme formel, et représente
+        les matériaux par ordre d'apparition en fonction du temps. Un matériau
+        est une classe d'objet, un paradigme, et un objet est l'entité qui, mis
+        bout à bout avec d'autres objets, constitue une musique. Le résultat
+        fourni par le logiciel est une série de diagrammes formels hiérarchisés,
+        ou chaque niveau de diagramme représente des objets de différentes
+        temporalités. Un diagramme de temporalité supérieure est construit en
+        parallèle et en fonction des résultats obtenus pour les diagrammes de
+        temporalités inférieures.
+      </p>
+      <a class="btn btn-primary btn-lg" href="{% url 'acwebui:parameters' %}">Tester le logiciel &raquo;</a>
+      </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-md-5">
+          <p>
+          <img class="img-fluid d-block mx-auto col-md-10 " src="{% static 'img/geisslerlied097.png' %}" alt="exemple Geisslerlied">
+<br>
+          <img class="img-fluid d-block mx-auto col-md-10 " src="{% static 'img/mozart0981_interp.png' %}" alt="exemple Mozart">
+          </p>
+        </div>
+        <div class="col-md-5">
+          <img class="img-fluid d-block mx-auto col-md-10 " src="{% static 'img/TENORK545.gif' %}" alt="exemple Mozart hiérarchisé">
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <img style =  "margin-bottom: 1cm" class="img-fluid d-block mx-auto col-md-5 " src="{% static 'img/représentation_cubes.JPG' %}" alt="exemple 3D cubes">
+      <br>
+      <img style =  "margin-bottom: 1cm" class="img-fluid d-block mx-auto col-md-5 " src="{% static 'img/représentation_sphères.JPG' %}" alt="exemple 3D sphère">
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-md-12">
+       <p>
+          <center>
+          <img alt="logo cnrs" style="height: 130px; margin-top: 10px;" src="{% static 'img/logos/logo_cnrs.svg' %}"/>
+          <img alt="logo iremus" style="height: 150px; margin-top: 10px;" src="{% static 'img/logos/logo_iremus.png' %}"/>
+          <img alt="logo sorbonne université" style="height: 80px; margin-top: 10px;" src="{% static 'img/logos/logo_su.png' %}"/>
+          <img alt="logo labri" style="height: 70px; margin-top: 10px;" src="{% static 'img/logos/logo_labri.png' %}"/>
+          <img alt="logo scrime-université bordeaux" style="height: 65px; margin-top: 10px;" src="{% static 'img/logos/logo_scrimeub.png' %}"/>
+          </center>
+        </p>
+      </div>
+    </div>
+
+
+    <!-- /.row -->
+
+  </div>
+{% endblock %}

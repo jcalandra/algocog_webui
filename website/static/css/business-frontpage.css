@@ -1,0 +1,164 @@
+/*!
+ * Start Bootstrap - Busines Frontpage (https://startbootstrap.com/template-overviews/business-frontpage)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-frontpage/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+  color: #03224C;
+}
+
+.nopadding{
+	padding-left: 0px!important;
+}
+
+h1, h1+h2, h1+h3{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.bg{
+	/* background-image: url("../img/banderolepixart06.jpg");*/
+}
+
+.bgimg{
+	background-image: url("../img/banderolepixart05.jpg");
+}
+
+
+.bg-image-full {
+	padding-bottom: 0!important;
+	background: no-repeat center center scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+	background-image: url("../img/banderolepixart.jpg");
+}
+
+.bg-image_full2{
+  padding-bottom: 0!important;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-image: url("../img/banderolepixart.jpg");
+}
+
+.degrade{
+	margin: 0;
+	padding: 3em;
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(255,255,255,1));
+}
+
+.jcalandra_img{
+	padding: 0;
+	-moz-border-radius: 60px;
+	border-radius: 60px;
+	background:rgba(0,0,0,0.5);
+	box-shadow: 0em 0em 5em rgba(3,20,62,0.8);
+}
+
+.btn{
+	background-color: #BD4992;
+	border-color:#AC4285;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	background: linear-gradient( #BD4992, #712B57);
+	text-shadow: 0px 1px 0px rgba( 255, 255, 255, 0.2);
+	box-shadow: 0 0 5px rgba( 0, 0, 0, 0.5),
+                 0 -1px 0 rgba( 255, 255, 255, 0.4);
+	}
+
+
+.btn:hover{
+	background-color: #BD4992;
+	background: linear-gradient( #BB4890, #DF56AC);
+	border-color: #E95AB4;
+}
+
+.btn:active{
+	background-color: #7731AC;
+	background: linear-gradient( #BD4992, #712B57);
+	border-color:#AC4285;
+	color: black!important;
+	box-shadow: 1px 1px 10px black inset,
+                 0 1px 0 rgba( 255, 255, 255, 0.4);
+}
+
+.justify{
+	text-align: justify;
+}
+
+.msg{
+	width: 34em;
+	height: 20em;
+}
+
+.default{
+	height: 25em;
+}
+
+.links{
+	color: #03224C!important;
+}
+
+.links:hover{
+	text-decoration: underline;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.italic{
+	font-style: italic;
+}
+
+.transparentbg1{
+	padding: 10px;
+	margin-bottom: 50px;
+	background: rgba(255,255,255,0.4);
+	background-repeat: no-repeat;
+}
+
+.transparentbg2{
+	background: rgba(255,255,255,0.4);
+	background-position: 30px 30px;
+	background-repeat: no-repeat;
+}
+
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #BABABA;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #1D85FF;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #1D85FF;
+  cursor: pointer;
+}

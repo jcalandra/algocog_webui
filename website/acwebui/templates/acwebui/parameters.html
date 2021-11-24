@@ -1,0 +1,205 @@
+{% extends 'layouts/base_bgimg.html' %}
+
+{% block title %}Application - Parametres{% endblock %}
+
+{% block content %}
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">L'algorithme cognitif - Interface web</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="py-5 mb-5">
+    <div class="container h-100">
+      <div class="row">
+      	<h1>Paramètres :</h1>
+ 	  </div>
+
+    </div>
+  </header>
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-8 mb-5 justify transparentbg1">
+       <p>
+       Selon François Delalande [1], l'écoute musicale est différente pour
+       chaque personne qui écoute une même œuvre musicale. La représentation
+       structurelle qui découle de l'écoute dépend des différents critères
+      auxquels la personne qui écoute est sensibilisée. On souhaite que le
+       système puisse proposer ces différentes présentations dépendamment des
+       choix de l'utilisateur. Pour cela, on
+       défini l'<I>agenda</I> qui correspond à l'ensemble des paramètres
+       définis permettant de construire une représentation de l'œuvre musicale.<br>
+       On propose donc un système paramétrable et l'utilisateur doit tout
+       d'abord spécifier l'ensemble des paramètres avant de procéder au calcul
+       des diagrammes formels hiérarchisés avec l'algorithme cognitif.
+       </p>
+       <p>[1] Delalande, F. La musique au-delà des notes. Presse Universitaires
+         de Rennes, 2019.</p>
+
+      </div>
+
+      <div class="offset-md-1 col-md-3 mb-5">
+        <p>
+
+        </p>
+      </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-md-5 mb-5 justify transparentbg2">
+          <h3>Votre analyse : </h3>
+
+            <form enctype="multipart/form-data" method="POST" class = "post-form form-group">
+                {%  csrf_token %}
+                <p><b>Fichier:</b> <br>
+                    Veuillez choisir un fichier à analyser au format .wav ou .mp3.</p>
+                <label>File : </label> {{form.file}}
+
+                <p> <b>Descripteurs:</b><br>
+                Veuillez choisir un seul type de descripteur.</p>
+                <label> Fft : </label> {{form.fft}}
+                <label> Cqt : </label> {{form.cqt}}
+                <label> Mfcc : </label> {{form.mfcc}}
+
+                <p><b>Seuil de similartité:</b><br>
+                Veuillez choisir un seuil de similarité compris entre 0 et 1.</p>
+
+                <label>Similarity threshold : </label>{{form.sim_threshold}}
+
+                <p><b>Seuil de segmentation:</b><br>
+                Veuillez choisir un seuil de segmentation supérieur à 0.</p>
+                <label>Segmentation threshold</label>{{form.seg_threshold}}
+
+                <p><b>Affichage de la similarité aux autres matériaux:</b><br>
+                Veuillez choisir un seuil de similarité aux autres matériaux entre 0
+                et 1.</p>
+                <label>Similarity materials threshold : </label> {{form.sim_materials}}
+
+                <p> <b>Règles de similarité </b><br>
+                    <span style="font-weight:600">Similarité du signal</span><br>
+                Veuillez choisir un unique critère pour l'analyse du signal </p>
+                <label>Differencial concordance</label> {{form.diff_concordance}}
+                <label>Euclidian distance</label> {{form.euclid_distance}}
+                <p> <span style="font-weight:600">Similarité symbolique</span><br>
+                    Veuillez choisir un unique critère pour l'analyse symbolique </p>
+                <label>Strict equality : </label> {{form.strict_equality}}
+                <label>Alignment : </label> {{form.alignment}}
+
+                <p> <b>Règles de segmentation: </b><br>
+                    <span style="font-weight:600">Similarité du signal</span><br>
+                Veuillez choisir un unique critère pour l'analyse du signal </p>
+                <label>Differential Fourier Transform : </label> {{form.diff_fourier}}
+                <label>Differential dynamic : </label> {{form.diff_dynamic}}
+                <p><span style="font-weight:600">Similarité symbolique</span><br>
+                    Veuillez choisir un critère minimum pour l'analyse symbolique </p>
+                <label>Rule 1 (similarity) : </label> {{form.rule_1}}<br>
+                <label>Rule 2 (validated hypothesis) : </label> {{form.rule_2}}<br>
+                <label>Rule 3 (existing object) : </label> {{form.rule_3}}<br>
+                <label>Rule 4 (recomputed object) : </label> {{form.rule_4}}<br>
+                <label>Rule 5 (regathering) : </label> {{form.rule_5}}
+
+                <p><b> Garder les frames transitoires ? </b></p>
+                <label>Transitory frames : </label> {{form.transitory_frame}}<br><br>
+
+
+                <button type="submit" class="save btn">Enregistrer les paramètres</button>
+            </form>
+        <p> Les paramètres plus précis sont à venir...</p>
+
+      </div>
+        <div class="offset-md-1 mb-5">
+        <p>
+
+        </p>
+      </div>
+      <div  class="col-md-6 mb-5 justify transparentbg2">
+          <h3>Documentation des paramètres:</h3>
+            <h6 style="font-weight:bold">Fichier à analyser</h6><p class="justify transparentbg2">
+             Choisissez ici un fichier à analyser au format .wav ou .mp3.</p>
+            <h6 style="font-weight:bold">Descripteurs</h6><p class="justify transparentbg2">
+            Il s'agit du choix de représentation des fichiers audio.
+            Correspond au paramètre d'interêt pour la modélisation d'un angle d'écoute donné.<br>
+            Choisissez strictement 1 critère entre fft, mfcc et cqt.
+          Si plusieurs descripteurs sont sélectionnés, la cqt est choisie par défaut.<br>
+            <br>
+          <span style="font-weight:600">fft (Fast Fourier Transform):</span> représentation linéaire de la fréquence.<br>
+          <span style="font-weight:600">cqt (Constant Q Transform):</span> représentation logarithmique la fréquence.<br>
+          <span style="font-weight:600">mfcc (Mel Frequency Cepstral Coefficients):</span> représentation timbrale.<br></p>
+
+          <h6 style="font-weight:bold">Similarity threshold</h6><p class="justify transparentbg2">
+            Seuil à partir duquel deux éléments sont considérés comme similaires.<br>
+            Choisissez une valeur entre 0 et 1.
+          Si le seuil sélectionné est inférieur à 0 ou supérieur à 1, les valeurs respectives 0 et 1 sont choisies.<br>
+      Attention: d'un critère à l'autre, les seuils de segmentation pertinents peuvent varier énormément.<br></p>
+
+          <h6 style="font-weight:bold">Segmentation threshold:</h6 ><p class="justify transparentbg2">
+            Seuil à partir duquel on considère qu'il y a segmentation entre deux éléments.<br>
+            Choisissez une valeur supérieure à 0.
+          Si le seuil sélectionné est inférieur à 0, la valeur 0 est choisie.<br>
+      Attention: d'un critère à l'autre, les seuils de segmentation pertinents peuvent varier énormément.<br></p>
+
+          <h6 style="font-weight:bold">Similarity materials threshold:</h6><p class="justify transparentbg2">
+            Valeur permettant de déterminer les couleurs affichées pour la similarité du matériau determiné
+            avec les matériau précédemment entendus.<br>
+          Choisissez une valeur entre 0 et 1.
+          Si le seuil sélectionné est inférieur à 0 ou supérieur à 1, les valeurs respectives 0 et 1 sont choisies.<br>
+            </p>
+
+          <h6 style="font-weight:bold">Similarité du signal</h6><p class="justify transparentbg2">
+            Représente le calcul effectué entre
+            deux objets au niveau du signal pour obtenir une valeur de leur similarité.<br>
+            Choisissez strictement 1 critère entre differential concordance et euclidian distance.
+          Nous recommandons d'utiliser la concordance différentielle pour la cqt et la fft et la distance euclidienne pour la mfcc.<br>
+            </p>
+          <h6 style="font-weight:bold">Similarité symbolique</h6><p class="justify transparentbg2">
+            Représente le calcul effectué entre deux objets au
+            niveau des symboles pour obtenir une valeur de leur similarité .<br>
+          choisissez strictement 1 critère entre strict equality et alignment.<br>
+          <span style="font-weight:600">Strict equality:</span> deux chaînes de caractère sont considérées comme similaires uniquement si elles sont strictement égales.<br>
+          <span style="font-weight:600">Alignment:</span> deux chaînes de caractères sont considérées comme similaires si le calcul de l'alignement entre les deux
+            chaînes donne une valeur supérieure au seuil de similarité.<br>
+            Si les deux critères sont sélectionnés, l'alignement est choisi par défaut.<br>
+            </p>
+          <h6 style="font-weight:bold">Segmentation du signal</h6><p class="justify transparentbg2">
+            Représente le calcul effectué
+            entre deux objets successifs au niveau du signal pour obtenir une valeur de leur dissimilarité. Si cette valeur est
+            supérieure au seuil de segmentation, il y a segmentation entre les deux objets.<br>
+          Choisissez strictement 1 critère entre Differencial Fourier Transform et Differencial Dynamic. <br>
+          <span style="font-weight:600">Differencial Fourier Transform:</span> segmente en fonction du spectre en frequence.<br>
+          <span style="font-weight:600">Differencial dynamic:</span> segmente en fonction de la dynamique (volume).<br>
+
+            </p>
+          <h6 style="font-weight:bold">Segmentation symbolique</h6><p class="justify transparentbg2">
+            Règles de grammaire permettant de déterminer la segmentation ou non au niveau symbolique.<br>
+          <span style="font-weight:600">règle 1 (similarity) : (ab + a => (ab)(a</span><br>
+            La première règle indique une opération de structuration si un objet de même niveau est de retour.<br><br>
+          <span style="font-weight:600">règle 2 (validated hypothesis) : (ab)(a + b => (ab)(ab</span><br>
+            La deuxième règle n'indique qu’il n’y a pas opération de structuration si le nouvel objet correspond à un objet attendu.<br><br>
+          <span style="font-weight:600">règle 3 (existing object) : (ab)(ab + c => (ab)(ab)(c</span><br>
+            La troisième règle indique une opération de structuration si l'objet concaténé correspond à un objet de niveau supérieur
+            déjà vu<br><br>
+          <span style="font-weight:600">règle 4 (recomputed object) : (abcd)(ab + e => (ab)(cd)(ab)(e</span><br>
+            La quatrième règle indique une opération de structuration si un objet concaténé qui n'a pas été structuré auparavant
+            est revu. La première et la deuxième occurrence sont structurées.<br><br>
+          <span style="font-weight:600">règle 5 (regathering) : (a + a => (aa</span><br>
+            Enfin, la cinquième règle empêche l'opération de structuration d'un objet isolé.<br>
+            On note que si aucune règle n'est selectionné, on obtient aucune segmentation au niveau symbolique.
+            </p>
+            <h6 style="font-weight:bold">Transitions</h6><p class="justify transparentbg2">
+            La première analyse à partir du signal est faite à partir d'objets de tailles choisies arbitrairement. On peut alors
+            obtenir des objets erronés contenant l'information de l'objet précédent et suivant. Vous pouvez choisir de les
+            laisser apparente en cochant cette case. Par défaut, ces objets sont classifiés dans les classes de matériau les plus proches.</p>
+            </div>
+    </div>
+
+    <!-- /.row -->
+    <div class="row">
+    </div>
+  </div>
+{% endblock %}

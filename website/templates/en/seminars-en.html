@@ -1,0 +1,56 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Seminars - Joséphine Calandra{% endblock %}
+
+{% block content %}
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Joséphine Calandra</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index-en' %}">Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about-en' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'formation-en' %}">Formation</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'thesis-en' %}">Thesis</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'seminars-en' %}">Publications&Séminars<span class="sr-only">(current)</span></a>
+          </li>
+          <li><a class="btn btn-primary" href="{% url 'seminars-en' %}">FR</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="py-5 mb-5">
+    <div class="container h-100">
+
+
+    </div>
+  </header>
+
+
+  <!-- Page Content -->
+  <div class="container default">
+
+    <!-- /.row -->
+
+
+    <!-- /.row -->
+
+  </div>
+{% endblock %}

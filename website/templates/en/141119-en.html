@@ -1,0 +1,189 @@
+{% extends 'layouts/base_bgimg.html' %}
+
+{% block title %}Musical analysis and computer modeling of the cognitive activities - Joséphine Calandra{% endblock %}
+
+{% block content %}
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Joséphine Calandra</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index-en' %}">Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about-en' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'formation-en' %}">Formation</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'thesis-en' %}">Thesis<span class="sr-only">(current)</span></a>
+          </li>
+          <li><a class="btn btn-primary" href="{% url '141119-fr' %}">FR</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="py-5 mb-5"  style="margin-bottom: 0!important">
+    <div class="container h-100">
+      <div class="row">
+      	<h1>Musical analysis and computer modeling of the cognitive activities</h1>
+        <h3>Workshop, IReMus, November, 14th and 15th 2019</h3>
+ 	    </div>
+    </div>
+  </header>
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div>
+      <ul>
+        <li><a href="#tahon" class="links"> Marie Tahon / Zaher Belghith. « Scruter la forme de l'informel – automatiser l'analyse du freejazz »</a></li>
+        <li><a href="#myriam" class="links">Myriam Desainte Catherine. « Modélisation de la forme et de la structure musicales : de la composition à l'analyse »</a></li>
+        <li><a href="#tanaka" class="links">Tsubasa Tanaka. « Manipulation des propriétés de séquences musicales pour la génération automatique de musique »</a></li>
+        <li><a href="#courtot" class="links">Francis Courtot. « Morphologies, Théorie, Composition »</a></li>
+        <li><a href="#meza" class="links">Mauricio Meza. « Vers la trace numérique comme conducteur de l'écoute dans des situations sonores interactives »</a></li>
+        <li><a href="#giacosa" class="links">Gabriele Giacosa. « Before Order: The Crucial Role of Phatic Function »</a></li>
+        <li><a href="#chouvel" class="links">Jean-Marc Chouvel. «L'analyse cognitive- enjeux épistémologiques»</a></li>
+        <li><a href="#gaulhiac" class="links">Manuel Gaulhiac. «Du signal à l'harmonie : incidence d'une conception énergétique dynamique»</a></li>
+        <li><a href="#calandra" class="links">Joséphine Calandra. «L'informatisation des concepts de l'analyse cognitive - une première approche»</a></li>
+      </ul>
+    </div>
+
+    <div class="transparentbg1">
+      <div class="transparentbg2">
+        <!-- /.row -->
+        <div class="row">
+          <div class="col-sm-10 mb-5 offset-sm-1">
+            <h4 class="bold">Thursday, November 14th 2019</h4>
+          </div>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+          <div class="col-sm-10 mb-5 offset-sm-1">
+            <h4>9:30AM-10:00AM Opening and presentation of the workshop</h4>
+          </div>
+        </div>
+        <!-- /.row -->
+        <div class="row" id="tahon">
+          <div class="col-sm-10 mb-5 offset-sm-1">
+            <h4>10:00AM-11:00AM Marie Tahon / Zaher Belghith</h4>
+            <h4 class="italic">« Scruter la forme de l'informel – automatiser l'analyse du freejazz »</h4>
+            <p class="justify">Le travail présenté ici est le résultat d’un projet collaboratif pluridisciplinaire entre l’informatique et l’analyse musicale. L’objectif est de développer une méthodologie permettant d’assister l’analyse en faisant émerger automatiquement des catégories musicales. La recherche de catégorie relève d’un double exercice de segmentation puis de regroupement. Nous présentons un outil développé principalement sur la base du clustering spectral, mais également sur de nouvelles fonctionalités telles que la transformée différentielle, l’utilisation de différent ensembles de descripteurs acoustiques ou la détermination automatique du nombre de catégories recherchées dans la structure. Nous appliquons ces outils à l’analyse du Free Jazz, style musical, où « le refus des codes conventionnels » prédomine. <br>
+            Ce type d’approche a l’avantage de pouvoir obtenir de manière non supervisée des catégories musicales. Cependant, l’inclusion d’aspects sémantiques ou cognitifs dans les modèles, nécessiterait de développer des méthodes supervisées, comme des réseaux de neurones. Les aspects d’interprétabilité des modèles pourraient également être pris en compte afin d’apporter des éléments d’analyse plus précis que les simples catégories. Pour conclure, nous discuterons de l’intérêt d’avoir des bases de données musicales segmentées et annotées.</p>
+            <p><a class="btn btn-primary btn-lg" href="../doc/141119/2019_journee_cognition.pdf">Presentation</a></p>
+          </div>
+        </div>
+        <!-- /.row -->
+        <div class="row" id="myriam">
+          <div class="col-sm-10 mb-5 offset-sm-1">
+            <h4>11:00AM-12:00PM Myriam Desainte Catherine</h4>
+            <h4 class="italic">« Modélisation de la forme et de la structure musicales : de la composition à l'analyse »</h4>
+            <p class="justify">Comment combiner le temps et les autres dimensions musicales? Nous aborderons la question de la modélisation du temps pour la composition musicale et l'interprétation, comment structurer le temps linéairement ou de façon arborescente, comment jouer avec le temps. Puis nous ébaucherons la problématique de la modélisation pour l'analyse.</p>
+            <p><a class="btn btn-primary btn-lg" href="../doc/141119/e.pdf">Presentation</a></p>
+          </div>
+        </div>
+        <!-- /.row -->
+        <div class="row" id="tanaka">
+          <div class="col-sm-10 mb-5 offset-sm-1">
+            <h4>2:00PM-3:00PM Tsubasa Tanaka</h4>
+            <h4 class="italic">« Manipulation des propriétés de séquences musicales pour la génération automatique de musique »</h4>
+            <p class="justify">Dans le cadre de la génération automatique de la musique, un dilemme existe entre automatisation et manipulation intentionnelle par l’utilisateur (compositeur). L'exemple le plus typique du premier cas est l'apprentissage profond tandis que celui du second est la programmation par contraintes. Bien que la programmation par contraintes puisse assurer des résultats qui satisfont les propriétés désirées grâce à son approche descendante (top-down), la charge imposée aux utilisateurs est lourde car toutes les propriétés de la musique doivent être modélisées à la main. À l'inverse, l'apprentissage profond peut automatiquement construire un modèle en apprenant des exemples fournis, mais la manipulation explicite des propriétés du résultat est difficile. Dans ce contexte, l'objectif actuel de ma recherche est de créer une méthode de génération de musique qui combine ces deux approches contraires. Cette approche pourra permettre de contrôler des propriétés de séquences musicales telles que des règles de théories musicales ou des propriétés cognitives (par exemple la redondance et la hiérarchie) en réduisant la charge imposée aux utilisateurs grâce à l'automatisation partielle de la modélisation. Dans cette présentation, je vais présenter mes réflexions concernant la manière de créer une telle méthode.</p>
+          </div>
+        </div>
+        <!-- /.row -->
+        <div class="row" id="courtot">
+          <div class="col-sm-10 mb-5 offset-sm-1">
+            <h4>3:00PM-4:00PM Francis Courtot</h4>
+            <h4 class="italic">« Morphologies, Théorie, Composition »</h4>
+            <p class="justify">Cette communication se propose de défricher le terrain des articulations entre types de "langage musical", "morphologie", et forme. Sa visée n'est pas de créer de toutes pièces une énième version d'un langage musical, mais de saisir en quoi l'importance nouvelle de catégories anciennes (nouvelle dans le sens de fondamental pour l'écriture contemporaine, ancienne dans le sens d'utilisé de façon décorative) peut s'avérer nécessaire lorsqu'il s'agit de penser de nouvelles esthétiques musicales, tout autant que pour représenter la cognition du compositeur à l'œuvre.</p>
+            <p><a class="btn btn-primary btn-lg" href="../doc/141119/FCourtot_morphologies_theorie_composition.pdf">Presentation</a></p>
+          </div>
+        </div>
+        <!-- /.row -->
+        <div class="row" id="meza">
+          <div class="col-sm-10 mb-5 offset-sm-1">
+            <h4>4:00PM-5:00PM Mauricio Meza</h4>
+            <h4 class="italic">« Vers la trace numérique comme conducteur de l'écoute dans des situations sonores interactives »</h4>
+            <p class="justify">Si l'écoute musicale émerge au sein d'un ensemble systémique, celui-ci serait constitué d'abord d'entités capables d'exprimer des états d'écoute. La récurrence variable de ces expressions donnerait lieu à son tour à la signification de préférences d'écoute : une multiplicité de description du fait musical. Pour construire de telles descriptions à partir d'un tel modèle systémique, on peut envisager d'établir formellement la mise en relation interactive des individus  et des entités qui le constituent. Dans cette mise en relation interactive, l'accumulation d'indexations des préférencesqui arrivent comme des expressions d'une conduite esthétique opératoire telle que l'écoute musicale, donnerait lieu à des potentiels de "prise-de-forme". Dans un tel contexte, dans quelle mesure la trace numérique indurait de ses potentiels énergétiques et informationnels le déploiement des forces engagées dans la formation d'une écoute ? Les traces numériques ont-elles une incidence sur la manière dont vont s'articuler les relations qui entrent en jeu parmis les entités conformant le systèle établi par l'écoute ? Quelle serait la fonction de la trace numérique dans le processus de création musicale de lors que celui-ci est déjà aussi médié par l'Intelligence Artificielle ? Après une introduction dans laquelle nous traiterons d'abord sur quelques uns des enjeux soulevés par la trace numérique, notre exposé fera un état de l'art en proposant un regard analytique et historique sur des oeuvres liées à notre recherche. Nous ferons par la suite la présentation de l'état actuel de développement d'un protocole de recherche et d'exprérimentation artistique conçu pour aborder cette problématique de manière expérimentale et empirique. EN preant appui sur des exemples de réalisations artistiques, nous rendrons compte d'un ensemble de concepts ayant eu leur émergence lors des différentes mises en jeu du dit protocole, parmi eux, celui d'instrument émergent, sorte d'entité dont la composante algorithmique peut se construire à partir de traces numériques lors des situations sonores interactives.</p>
+          </div>
+        </div>
+        <!-- /.row -->
+        <div class="row"  id="tableronde">
+          <div class="col-sm-10 mb-5 offset-sm-1">
+            <h4>5:00PM-6:00PM Round Table: Musical modelisation - musical and computational concepts.</h4>
+          </div>
+        </div>
+    </div>
+  </div>
+
+   <div class="transparentbg1">
+    <div class="transparentbg2">
+    <!-- /.row -->
+      <div class="row">
+        <div class="col-sm-10 mb-5 offset-sm-1">
+          <h4 class="bold">Friday, November 15th 2019</h4>
+        </div>
+      </div>
+      <!-- /.row -->
+      <div class="row" id="giacosa">
+        <div class="col-sm-10 mb-5 offset-sm-1">
+          <h4>9:00AM-10:00AM Gabriele Giacosa</h4>
+           <h4 class="italic">« Before Order: The Crucial Role of Phatic Function »</h4>
+           <p class="justify">Taking the perspective of cognitive semiotics, I shall suggest that music analysis should move beyond the traditional/theoretical boundaries of “order” and structure. Nattiez’s semiotic framework, derived from Jean Molino’s, conceives of music as a transmission; I suggest that music should be analyzed also as a product, with a high relevance set on intersubjectivity. Specifically, 4E cognition and the phenomenological level imply that cognitive analysis should consider the crucial role played by the phatic function, typically absent in mathematical modeling. <br>Consistently with both Koelsch’s model of neural perception of music and the developmental concept of “teleomusicality”, minimal prosodic cues substantiate meaningful interaction. Semiosis is to be understood as a radically bottom-up perspective from basic intentionality as “openness-to-the-world”. Despite a lack of normative denotational dimension in music, all sharable meaning implies a degree of conventionality, in terms of assuming the other’s ability to identify and interact with the signal/code. The phatic function, therefore, becomes a basic requirement for communication, albeit non-explicit. In alignment with Ian Cross’s perspective, I suggest absorbing the phatic dimension in cognitive analysis of music.</p>
+           <p><a class="btn btn-primary btn-lg" href="../doc/141119/Giacosa_beforeorder.pdf">Presentation</a></p>
+        </div>
+      </div>
+      <!-- /.row -->
+      <div class="row" id="chouvel">
+        <div class="col-sm-10 mb-5 offset-sm-1">
+          <h4>10:00AM-11:00AM Jean-Marc Chouvel</h4>
+          <h4 class="italic"> «L'analyse cognitive- enjeux épistémologiques»</h4>
+          <p class="justify">On tentera de mettre en évidence les enjeux d’un rapprochement entre l’acte analytique et la posture cognitive, en particulier dans le cadre de l’automation des procédures analytiques. On cherchera en particulier à souligner les évolutions en termes de représentation des phénomènes temporels que ces recherches seront susceptibles de stimuler.</p>
+          <p><a class="btn btn-primary btn-lg" href="../doc/141119/chouvel.pdf">Presentation</a></p>
+        </div>
+      </div>
+      <!-- /.row -->
+      <div class="row" id="gaulhiac">
+        <div class="col-sm-10 mb-5 offset-sm-1">
+          <h4>2:00PM-3:00PM Manuel Gaulhiac</h4>
+          <h4 class="italic"> «Du signal à l'harmonie : incidence d'une conception énergétique dynamique»</h4>
+          <p class="justify"> Toute théorie touchant  à la perception de l’harmonie se frotte tout d’abord à la question du type d’approche. Il y a les approches dites « naturelles », qu’elles soient arithmétiques, acoustiques ou biologiques, et les approches dites « culturelles », liées à l’expérience, à l’apprentissage ou à l’esthétique. La naissance de chacune d’elles est datée historiquement, et l'on sait maintenant qu’elle sont complémentaires. Nous adoptons ici une approche acoustique, conscients des limites d’une telle restriction, mais motivés par la richesse à la fois conceptuelle et effective des méthodes de traitement du signal, ainsi que par l'apport d'une vision multidimensionnelle. <br>
+          Nous considérons l’harmonie comme résultant de l'interaction des sons associés à différentes notes, interaction examinée à la fois sous son aspect synchronique (notion d’accord), et diachronique (enchaînements d’accords). L’objet d'étude se situe donc à l’interface entre le symbolique, auquel est rattachée la notion de note, et la réalité physique qu’est le son. Nous nous attachons ici à comprendre ce que l’acoustique nous apprend de l’interaction entre les notes. Pour ce faire, nous introduisons la notion de descripteur harmonique, type particulier de descripteur audio, qui caractérise cette interaction. Nous présentons plusieurs d’entre eux, certains issus de la littérature et des expériences sur la perception, d’autres reposant sur des considérations énergétiques, et les appliquons à des cadences et des contrepoints simples afin de mettre en évidence leur potentiel pour l’analyse musicale.</p>
+          <p><a class="btn btn-primary btn-lg" href="../doc/141119/Presentation.key">Presentation</a></p>
+        </div>
+      </div>
+      <!-- /.row -->
+      <div class="row" id="calandra">
+        <div class="col-sm-10 mb-5 offset-sm-1">
+          <h4>3:00PM-4:00PM Joséphine Calandra</h4>
+          <h4 class="italic"> «L'informatisation des concepts de l'analyse cognitive - une première approche»</h4>
+          <p class="justify">La musicologie cognitive a pour objectif de nous permettre de comprendre les relations entre l'exécution musicale et les effets qu'elle produit chez l'auditeur. On souhaite modéliser de manière dynamique l'analyse musicale en prenant en considération le temps et la mémoire, nécessaires à l'appréhension de la musique. Je proposerai lors de cette présentation d'apporter une première approche en mettant en perspective différents outils informatiques existants pour l'analyse des structures musicales avec les considérations musicologiques et cognitives essentielles à la compréhension de la musique.</p>
+          <p><a class="btn btn-primary btn-lg" href="../doc/141119/analyse_cognitive.pdf">Presentation</a></p>
+        </div>
+      </div>
+      <!-- /.row -->
+      <div class="row">
+        <div class="col-sm-10 mb-5 offset-sm-1">
+          <h4>4:00PM-5:00PM General discussion</h4>
+          <p class="justify"></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+    <!-- /.row -->
+
+  </div>
+{% endblock %}

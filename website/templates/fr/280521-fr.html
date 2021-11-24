@@ -1,0 +1,78 @@
+{% extends 'layouts/base_bgimg.html' %}
+
+{% block title %}Sémiologie générale et musicologie - Joséphine Calandra{% endblock %}
+
+{% block content %}
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Joséphine Calandra</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Accueil
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'apropos-fr' %}">À propos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'formation-fr' %}">Formation</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'these-fr' %}">Thèse<span class="sr-only">(current)</span></a>
+          </li>
+          <li><a class="btn btn-primary" href="{% url '280521-en' %}">EN</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="py-5 mb-5"  style="margin-bottom: 0!important">
+    <div class="container h-100">
+      <div class="row">
+      	<h1>Sémiologie générale et musicologie </h1><br/>
+        <h3>Séminaire, IreMus - En ligne, 28 Mai 2021</h3>
+ 	    </div>
+    </div>
+  </header>
+
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="transparentbg1">
+      <div class="transparentbg2">
+        <!-- /.row -->
+        <div class="row" id="calandra">
+          <div class="col-sm-10 mb-5 offset-sm-1">
+            <h4>Présentation de recherche : Joséphine Calandra, IReMus, LaBRI – Projet Prime CNRS</h4>
+            <h4 class="italic">« Oracle multi-échelle et représentation automatisée de diagrammes formels basés sur l'algorithme cognitif »</h4>
+            <p class="justify">Cette présentation traite de la représentation automatique des diagrammes formels, ce qui correspond à une analyse paradigmatique de l'œuvre musicale écoutée. Les diagrammes représentent les matériaux musicaux en fonction du temps et peuvent être obtenus à partir du signal audio, en appliquant un algorithme cognitif. Nous proposons d'analyser des matériaux prédéfinis donnés sous forme de chaîne. Puis nous développons la création automatique de tous les diagrammes formels de niveaux supérieurs qui en résultent. La structuration des séquences de matériaux à partir du niveau inférieur construit les diagrammes formels des niveaux supérieurs. Les caractères structurés qui sont rassemblés représentent alors un matériau de plus haut niveau. Par conséquent, nous présentons un Oracle multi-échelles : une structure de données qui stocke et connecte les différents niveaux et matériaux. Ainsi, une chaîne spécifique donnée en entrée du système produit une superposition de schémas formels en fonction de différentes structurations paramétriques. Comme les diagrammes formels hiérarchiques offrent une nouvelle représentation de la musique, nous suggérons que les musicologues pourrait utiliser ces diagrammes pour l'analyse.</p>
+            <!--<p><a class="btn btn-primary btn-lg" href="../doc/141119/2019_journee_cognition.pdf">Presentation</a></p>-->
+          </div>
+        </div>
+        <!-- /.row -->
+        <div class="row" id="galarreta">
+          <div class="col-sm-10 mb-5 offset-sm-1">
+            <h4>Rencontre avec Daniel Galarreta, Centre National d’Etudes Spatiales</h4>
+            <h4 class="italic">« Sémiotique des Systèmes Complexes Artificiels »</h4>
+            <p class="justify">Lors de notre intervention nous essaierons de montrer comment le fait d’appréhender un système complexe artificiel, en tant qu’objet sémiotique, peut conduire au développement d’une méthodologie sémiotique nouvelle et déboucher sur un projet épistémologique.</p>
+            <p class="justify">Par systèmes complexes nous entendons des systèmes que l’on "tient pour irréductibles à un modèle fini, aussi compliqué, stochastique, sophistiqué que soit ce modèle, quelles que soient la taille de ses composants, l’intensité de leurs interactions". Quand il s’agit de la conception de systèmes artificiels, ceux-ci mobilisent un très grand nombre de disciplines. Il s'agit alors de permettre aux concepteurs de tels systèmes, de partager efficacement leurs connaissances afin de produire une solution qui réponde aux attentes qui l'ont motivée.</p>
+            <p class="justify">Au lieu de considérer le système à concevoir selon chacun des points de vue en jeux, fonctionnels par exemple ou économiques, on peut alternativement le considérer comme un objet signifiant compatible avec tous les points de vue impliqués par l'activité de conception. Ce déplacement de l'objet vers les points de vue, inscrit alors la réflexion théorique dans le cadre d'une épistémologie constructiviste.</p>
+            <p class="justify">Nous indiquerons dans cette intervention quelques possibilités de développements théoriques auxquels ce déplacement conduit. En particulier nous avancerons la possibilité d’une activité de conception qui ne nécessite pas obligatoirement la mobilisation du schéma de communication linguistique classique.</p>
+            <p class="justify">Ces réflexions pourront peut-être, nous l’espérons, trouver un écho auprès d’un auditoire également intéressé par la conception, musicale dans ce cas.</p>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+
+    <!-- /.row -->
+
+  </div>
+{% endblock %}

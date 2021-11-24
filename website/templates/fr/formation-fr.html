@@ -1,0 +1,95 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Formation - Joséphine Calandra{% endblock %}
+
+{% block content %}
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Joséphine Calandra</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'apropos-fr' %}">À propos</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'formation-fr' %}">Formation<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'these-fr' %}">Thèse</a>
+          </li>
+          <li><a class="btn btn-primary" href="{% url 'formation-en' %}">EN</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="py-5 mb-5">
+    <div class="container h-100">
+      <div class="row">
+      	<h1>Formation :</h1>
+ 	  </div>
+
+    </div>
+  </header>
+
+
+  <!-- Page Content -->
+  <div class="container justify">
+
+    <div class="row">
+      <div class="col-md-8 mb-5">
+        <h3>Thèse: L'algorithmique cognitive et ses applications musicales</h3>
+        <h5>IReMus, LaBRI, CNRS, 2019</h5>
+        <p>
+          Thèse en codirection entre l'Institut de Recherche en Musicologie (IReMus) et le Laboratoire Bordelais de Recherche en Informatique (LaBRI), financée par le CNRS dans le cadre de l'appel à projets interdisciplinaires 80|Prime.<br>
+          Membre de l'assication des doctorants en informatique AFoDIB.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 mb-5">
+        <h3>Ecole d'ingénieur, Filière Informatique</h3>
+        <h5>ENSEIRB-MATMECA, 2016-2019</h5>
+        <p>
+        3e année spécialisée en technologies multimédia et jeux vidéos. <br>
+        Activités et associations : Titulaire au Conseil des études de Bordeaux INP. Suppléante puis Titulaire au Conseil d'École de l'ENSEIRB-MATMECA. <br>
+        Responsable événementiel au Bureau des Élèves de l'ENSEIRB-MATMECA (2017 - 2018).
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 mb-5">
+        <h3>Classe préparatoire aux Grandes Ecoles, filière mathématique MPSI - MP option SI</h3>
+        <h5>Lycée Janson de Sailly (Paris XVIe), 2014-2016</h5>
+        <p>Classe préparatoire aux Grandes Ecoles, filières Mathématiques, Physique et Science de l'Ingénieur puis Mathématiques, Physique option Science de L'ingénieur.<br>
+        Sujet de TIPE : La Synthèse Sonore par programme informatique.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 mb-5">
+        <h3>Baccalauréat, Série Scientifique - SVT.</h3>
+        <h5>Lycée Galilée (Cergy Saint-Christophe), 2011-2014</h5>
+        <p>Obtention du Baccalauréat général Série Scientifique SVT mention Très Bien, mention Européenne Anglais.</br>
+        Spécialité Mathématique, option européenne anglais et musique.</p>
+      </div>
+    </div>
+    <!-- /.row -->
+
+
+    <!-- /.row -->
+
+  </div>
+{% endblock %}

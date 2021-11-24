@@ -1,0 +1,107 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %}About - Joséphine Calandra{% endblock %}
+
+{% block content %}
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Joséphine Calandra</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index-en' %}">Home
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'about-en' %}">About<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'formation-en' %}">Formation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'thesis-en' %}">Thesis</a>
+          </li>
+          <li><a class="btn btn-primary" href="{% url 'apropos-fr' %}">FR</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="py-5 mb-5">
+    <div class="container h-100">
+      <div class="row">
+      	<h1>About :</h1>
+ 	  </div>
+
+    </div>
+  </header>
+
+
+  <!-- Page Content -->
+  <div class="container justify">
+
+    <div class="row">
+      <div class="col-md-8 mb-5">
+       <p>
+       	Joséphine Calandra is a PhD student co-supervised in musicology and computer science. She's supervised within the Musicology Research Institute (IReMus) by Jean-Marc Chouvel, and within the Laboratory of Research in Computer Science of Bordeaux (LaBRI) by Myriam Desainte-Catherine. Joséphine is a Computer Science Engineer graduated in 2019 at ENSEIRB-MATMECA, and she is currently working on a thesis on cognitive algorithmics and its musical applications : real-time structuration at different hierarchical levels of music and the effects that it involves on the cognitive system.
+       </p>
+       <p>This thesis is funded as part of the <a href="https://miti.cnrs.fr/prime/">80|Prime</a> call for projects by the CNRS.</p>
+        <p>The different actors are the <a href="http://www.cnrs.fr/fr">CNRS</a> , <a href="http://www.iremus.cnrs.fr/fr">IReMus</a> , <a href="http://sorbonne-universite.fr/">Sorbonne University</a>, <a href="http://lettres.sorbonne-universite.fr/concepts-et-langages-ed5">DS433 Concepts and Languages</a> doctoral school, le <a href="https://www.labri.fr/index.php">LaBRI</a> , <a href="https://www.u-bordeaux.fr/"> Bordeaux University</a> and <a href="https://scrime.u-bordeaux.fr/">SCRIME</a>.</p>
+        <p>
+          <center>
+          <img alt="logo cnrs" style="height: 130px; margin-top: 10px;" src="{% static 'img/logos/logo_cnrs.svg' %}"/>
+          <img alt="logo iremus" style="height: 150px; margin-top: 10px;" src="{% static 'img/logos/logo_iremus.png' %}"/>
+          <img alt="logo sorbonne université" style="height: 80px; margin-top: 10px;" src="{% static 'img/logos/logo_su.png' %}"/>
+          <img alt="logo labri" style="height: 80px; margin-top: 10px;" src="{% static 'img/logos/logo_labri.png' %}"/>
+          <img alt="logo scrime-université bordeaux" style="height: 60px; margin-top: 10px;" src="{% static 'img/logos/logo_scrimeub.png' %}"/>
+        </center>
+        </p>
+      </div>
+
+       <div class="offset-md-1 col-md-3 mb-5">
+        <p>
+          <a href="http://www.iremus.cnrs.fr/fr">IReMus</a> <br>
+          2, rue de Louvois <br>
+          75002 Paris
+        </p>
+        <p>
+          <a href="http://sorbonne-universite.fr/">Sorbonne-Université</a> <br>
+          Centre Univ. Clignancourt, <br>
+          2, rue Francis de Croisset<br>
+          75018 Paris
+        </p>
+         <p>
+          <a href="http://lettres.sorbonne-universite.fr/concepts-et-langages-ed5">ED433 Concepts et Langages</a><br>
+          Maison de la Recherche, salles 312 et 313 <br>
+          28, rue Serpente<br>
+          75006 Paris
+        </p>
+        <p>
+          <a href="https://www.labri.fr/index.php">LaBRI</a> <br>
+          Bureau 104, Bat A30 <br>
+          351, cours de la Libération <br>
+          F-33405 Talence Cedex
+        </p>
+         <p>
+          <a href="https://scrime.u-bordeaux.fr/">SCRIME</a> <br>
+          Bât A37 - Château Bonnefont <br>
+          351, cours de la Libération <br>
+          F-33405 Talence Cedex
+        </p>
+      </div>
+    </div>
+    </div>
+    <!-- /.row -->
+
+
+
+    <!-- /.row -->
+
+  </div>
+{% endblock %}

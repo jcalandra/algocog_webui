@@ -1,0 +1,121 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %}Thèse - Joséphine Calandra{% endblock %}
+
+{% block content %}
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Joséphine Calandra</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'apropos-fr' %}">À propos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'formation-fr' %}">Formation</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'these-fr' %}">Thèse<span class="sr-only">(current)</a>
+          </li>
+          <li><a class="btn btn-primary" href="{% url 'thesis-en' %}">EN</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="py-5 mb-5">
+    <div class="container h-100">
+      <div class="row">
+      	<h1>Thèse :</h1>
+ 	  </div>
+
+    </div>
+  </header>
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-8 mb-5 justify">
+        <p><h3>L'algorithmique cognitive et ses applications musicales</h3></p>
+       <p>
+       Les évolutions récentes de la musicologie systématique vers une prise en compte des données des sciences cognitives modifient radicalement la façon d'appréhender les œuvres du temps. En musicologie, cela s'est traduit par l'émergence d'une musicologie cognitive et plus précisément d'une "analyse cognitive" qui a permis de proposer une évolution importante des modes de représentation des formes et des structures musicales. L'implémentation informatique de ces nouvelles idées permettrait de renouveler la manière d'appréhender informatiquement les flux de données numériques, notamment en mettant en évidence l'importance d'une algorithmique de second ordre, capable de modéliser des aspects fondamentaux des stratégies cognitives sollicités par les structures musicales. Cette algorithmique serait en mesure de proposer de nouvelles représentations, et en particulier des représentations de son propre comportement dont la valeur signifiante pour les œuvres est encore entièrement à explorer. L’ensemble de ces procédures pourra faire l’objet de validations psycho-cognitives, notamment dans le cadre de dispositifs en ligne faisant appel à la participation d’auditeurs volontaires (recherche participative).
+      </p>
+      <p>
+      L'objectif de cette thèse est donc de proposer une modélisation informatique de ces nouvelles idées issues de la musicologie cognitive et de conduire les expérimentations informatiques et musicologiques nécessaires à la validation des concepts et de leur mise en œuvre concrète.</p>
+      </div>
+      <div class="col-md-4 mb-5 justify">
+        <p  style="text-align:center;">
+          <img style =  "margin-bottom: 1cm" class="img-fluid d-block mx-auto col-md-10" href="{% url 'acwebui:index' %}" src="{% static 'img/df.JPG' %}" alt="Schéma stylisé de diagramme formel">
+          <a class="btn btn-primary btn-lg" href="{% url 'acwebui:index' %}">Tester l'interface web &raquo;</a>
+        </p>
+      </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <h2>Conférences et Séminaires</h2>
+    </div>
+     <!-- /.row -->
+    <div class="row">
+        <h4>Dans le cadre de la thèse :</h4>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-md-8 mt-4 mb-5">
+        <ul>
+          <li><a class="links" href="{% url '141119-fr' %}">
+            <h5>L'analyse musicale et la modélisation informatique des activités cognitives</h5>
+             <h6>Journées d'étude, IReMus, 14 et 15 novembre 2019</h6>
+          </a>
+          <li><a class="links" href="https://jim2020.sciencesconf.org/data/pages/CALANDRA_J._CHOUVEL_J._M._DESAINTE_CATHERINE_M._HANNA_P._Generation_automatique_de_diagrammes_formels_par_un_algorithme_cognitif_modulaire_1.pdf">
+            <h5>Journées d'Informatique Musicales 2020</h5>
+           <h6>Conférence, Strasbourg- En ligne, 26 - 28 Octobre 2020</h6>
+         </a>
+         <li><a class="links" href="https://www.tenor-conference.org/proceedings/2021/06_Calandra_tenor21.pdf">
+           <h5>TENOR 2021 - 6th international conference on technologies for music notation and representation</h5>
+          <h6>Conférence, Hamburg - En ligne, 10 - 13 Mai 2021</h6>
+        </a>
+          <li><a class="links" href="{% url '280521-fr' %}">
+            <h5>Sémiologie générale et musicologie</h5>
+           <h6>Séminaire, IReMus - En ligne, 28 Mai 2021</h6>
+         </a>
+         <li><a class="links" href="https://scrime.u-bordeaux.fr/Agenda/Seminaire-SCRIME-2021">
+           <h5>Séminaire du SCRIME 2021</h5>
+          <h6>Séminaire, SCRIME - En ligne, 24 Juin 2021</h6>
+        </a>
+        </ul>
+      </div>
+    </div>
+
+      <!-- /.row -->
+      <div class="row">
+          <h4>Autres travaux : </h4>
+      </div>
+      <div class="row">
+        <div class="col-md-8 mt-4 mb-5">
+          <ul>
+            <li><a class="links" href="https://lac2020.sciencesconf.org/317297">
+              <h5>Linux Audio Conference 2020</h5>
+               <h6>Conférence, Bordeaux - En ligne , 25 - 28 Novembre 2020</h6>
+            </a>
+          </ul>
+        </div>
+      </div>
+
+
+
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+{% endblock %}

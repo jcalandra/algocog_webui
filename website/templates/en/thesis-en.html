@@ -1,0 +1,110 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Thesis - Joséphine Calandra{% endblock %}
+
+{% block content %}
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Joséphine Calandra</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index-en' %}">Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about-en' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'formation-en' %}">Formation</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'thesis-en' %}">Thesis<span class="sr-only">(current)</a>
+          </li>
+          <li><a class="btn btn-primary" href="{% url 'these-fr' %}">FR</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="py-5 mb-5">
+    <div class="container h-100">
+      <div class="row">
+      	<h1>Thesis :</h1>
+ 	  </div>
+
+    </div>
+  </header>
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-8 mb-5 justify">
+       <p><h3>The Cognitive Algorithm and its musical applications</h3></p>
+       <p>
+      The recent evolutions of systematic musicology taking into account cognitive sciences radically modify our apprehension of time in music. Therefore, the emergence of cognitive musicology and specifically a "cognitive analysis" has resulted in musicology. It has made it possible to offer a significant evolution in the modes of representation of musical forms and structures. The computer implementation of these new ideas would make it possible to renew the way of understanding digital data flows, in particular by highlighting the importance of a second-order algorithm capable of modeling fundamental aspects of cognitive strategies necessitated by musical structures. This algorithm would offer new representations, especially of its behavior, the significant value of which is yet to be fully understood. All of these procedures may be the subject of psycho-cognitive validation in the context of online systems involving the participation of volunteer auditors (participatory research).
+      </p>
+      <p>
+Therefore, the objective of this thesis is to offer a computer modeling of these new ideas resulting from cognitive musicology. It aims to conduct the computer and musicological experiments necessary for the concepts and their concrete implementation's validation.      </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <h2>Conferences & Workshops</h2>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <h4>In the context of the thesis : </h4>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-md-8 mt-4 mb-5">
+        <ul>
+          <li><a class="links" href="{% url '141119-en' %}">
+            <h5>Musical analysis and computer modeling of the cognitive activities</h5>
+             <h6>Workshop, IReMus, November, 14th and 15th 2019</h6>
+          </a>
+          <li><a class="links" href="https://jim2020.sciencesconf.org/data/pages/CALANDRA_J._CHOUVEL_J._M._DESAINTE_CATHERINE_M._HANNA_P._Generation_automatique_de_diagrammes_formels_par_un_algorithme_cognitif_modulaire_1.pdf">
+            <h5>Journées d'Informatique Musicales 2020 (Computer Music Days)</h5>
+           <h6>Conference, Strasbourg- Online, October, 26th - 28th 2020</h6>
+         </a>
+         <li><a class="links" href="https://www.tenor-conference.org/proceedings/2021/06_Calandra_tenor21.pdf">
+           <h5>TENOR 2021 - 6th international conference on technologies for music notation and representation</h5>
+          <h6>Conference, Hamburg - Online, May, 10th - 13th 2021</h6>
+        </a>
+          <li><a class="links" href="{% url '280521-en' %}">
+            <h5>General semiology and musicology</h5>
+           <h6>Workshop, IReMus - Online, May, 28th 2021</h6>
+         </a>
+         <li><a class="links" href="https://scrime.u-bordeaux.fr/Agenda/Seminaire-SCRIME-2021">
+           <h5>SCRIME workshop 2021</h5>
+          <h6>Workshop, SCRIME - Online, June, 24th 2021</h6>
+        </a>
+        </ul>
+      </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <h4>Other works : </h4>
+    </div>
+    <div class="row">
+      <div class="col-md-8 mt-4 mb-5">
+        <ul>
+          <li><a class="links" href="https://lac2020.sciencesconf.org/317297">
+            <h5>Linux Audio Conference 2020</h5>
+             <h6>Conference, Bordeaux - Online , November, 25th - 28th 2020</h6>
+          </a>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}

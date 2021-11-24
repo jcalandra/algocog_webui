@@ -1,0 +1,87 @@
+
+{% extends 'layouts/base_bgimg.html' %}
+
+{% block title %}Application - Parametres{% endblock %}
+
+{% block content %}
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">L'algorithme cognitif - Interface web</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="py-5 mb-5">
+    <div class="container h-100">
+      <div class="row">
+      	<h1>Ensemble des résultats : </h1>
+ 	  </div>
+
+    </div>
+  </header>
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-4 mb-5 justify transparentbg1">
+        <h1>Résultats : </h1>
+
+        <h2> Paramètres : </h2>
+          File : {{ element.file}}<br>
+          Similarity Threshold : {{ element.sim_threshold}}<br>
+          Segmentation Threshold : {{ element.seg_threshold}}<br>
+          Color similarity materials Threshold : {{ element.sim_materials}}<br>
+          FFT : {{ element.fft}}<br>
+          CQT : {{ element.cqt}}<br>
+          MFCC : {{ element.mfcc}}<br>
+          Differential Concordance : {{ element.diff_concordance}}<br>
+          Euclidian Distance : {{ element.euclid_distance}}<br>
+          Strict Equality : {{ element.strict_equality}}<br>
+          Alignment : {{ element.alignment}}<br>
+          Differancial Fourier Transform : {{ element.diff_fourier}}<br>
+          Differancial Dynamic : {{ element.diff_dynamic}}<br>
+          Rule 1 (similarity) : {{ element.rule_1}}<br>
+          Rule 2 (validated hypothesis) : {{ element.rule_2}}<br>
+          Rule 3 (existing object) : {{ element.rule_3}}<br>
+          Rule 4 (recomputed object) : {{ element.rule_4}}<br>
+          Rule 5 (regathering) : {{ element.rule_5}}<br>
+          Display Transitory Frames : {{ element.transitory_frame}}<br>
+        <a class="save btn" href="{%url 'acwebui:parameters_text' %}"> Télécharger les paramètres </a><br>
+      </div>
+       <div class="offset-md-1 col-md-7 mb-5 justify transparentbg1">
+         <h2>Laissez un commentaire sur l'analyse obtenue:</h2>
+         <p> Vous pouvez laisser un commentaire sur les résultats obtenus avec le système sur l'oeuvre que vous souhaitez
+         analyser. Pour rappel, un paramétrage différent donne une analyse différente. Nous vous encourageons à tester
+         différents seuils si les résultats obtenus ne vous conviennent pas. Les seuils peuvent être très sensibles !</p>
+         <p>Si vous le souhaitez, vous pouvez laisser votre nom, prénom et mail afin que  l'on puisse vous recontacter,
+           mais ce n'est pas obligatoire.</p>
+         <p>Les données collectées, à savoir votre nom, prénom, adresse mail, et votre statut en tant que musicien ou
+           musicologue sont utilisées uniquement à des fins personnelles. Elles permettent de vous recontacter
+           au besoin et de contextualiser votre commentaire. Seule Joséphine Calandra, développeuse de l'Algorithme
+           Cognitif, a accès à ces données. Ces
+           données seront supprimées à la fin de la thèse de Joséphine Calandra et vous pouvez la contacter
+           (josephine.calandra@labri.fr) pour demander la suppression de vos données.</p>
+         <form method="POST" class = "post-form">
+                {%  csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="save btn">Envoyer le commentaire</button>
+            </form>
+       </div>
+    </div>
+
+
+    <!-- /.row -->
+    <div class="row">
+          <h2> Diagramme Formel : </h2><br>
+          {% for element in formaldiagram.images %}
+          <img src = "/uploads/{{ element }}"><br><br>
+          <a class="save btn" href="/uploads/{{ element }}" download> Télécharger le Diagramme Formel </a><br><br>
+          {% endfor %}
+
+    </div>
+
+  </div>
+{% endblock %}

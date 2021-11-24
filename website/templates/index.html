@@ -1,0 +1,122 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %}Accueil - Joséphine Calandra{% endblock %}
+
+{% block content %}
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Joséphine Calandra</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'index' %}">Accueil<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'apropos-fr' %}">À propos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'formation-fr' %}">Formation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'these-fr' %}">Thèse</a>
+          </li>
+          <li><a class="btn btn-primary" href="{% url 'index-en' %}">EN</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-image-full py-5 mb-5" >
+    <div class="container h-120">
+      <div class="row h-100 align-items-center">
+
+        	<div class="col-md-4">
+          		<img class="img-fluid d-block mx-auto col-md-8 jcalandra_img" src="{% static 'img/jcalandra.jpg' %}" alt="photo de Joséphine Calandra">
+     		</div>
+     		<div class="col-md-8">
+        		<h1 class="display-4 text-white mt-5 mb-2 nopadding">Informatique Musicale</h1>
+          		<p class="lead mb-5" style="color:white; opacity:0.8">Doctorante en Musicologie appliquée à l'Informatique au sein de l'IreMus et du LaBRI. <br>
+          		Ingénieure en informatique (ENSEIRB-MATMECA). <br>
+          		Sorbonne Université, ED433 Concepts et Langages, CNRS. <br>
+          		SCRIME, Université de Bordeaux.
+          		</p>
+          	</div>
+            <div class="col-lg-3">
+
+          </div>
+        </div>
+
+    </div>
+    <div class="row h-20 degrade">
+    </div>
+  </header>
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-8 mb-5">
+        <h2>Thèse : <br>
+        L'algorithmique cognitive et ses applications musicales.</h2>
+        <hr>
+        <p class = "justify">Les évolutions récentes de la musicologie systématique vers une prise en compte des données des sciences cognitives modifient radicalement la façon d'appréhender les œuvres du temps. En musicologie, cela s'est traduit par l'émergence d'une musicologie cognitive et plus précisément d'une "analyse cognitive" qui a permis de proposer une évolution importante des modes de représentation des formes et des structures musicales. L'implémentation informatique de ces nouvelles idées permettrait de renouveler la manière d'appréhender informatiquement les flux de données numériques, notamment en mettant en évidence l'importance d'une algorithmique de second ordre, capable de modéliser des aspects fondamentaux des stratégies cognitives sollicités par les structures musicales...</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'these-fr' %}">En savoir plus &raquo;</a>
+      </div>
+      <div class="col-md-4 mb-5">
+        <h2>Contact</h2>
+        <hr>
+        <address>
+          <strong>LaBRI</strong>
+          <br>Bureau 104, Bat A30
+          <br>351, cours de la Libération
+          <br>F-33405 Talence Cedex
+        </address>
+        <address>
+          <a href="mailto:josephine.calandra@labri.fr">josephine.calandra@labri.fr</a>
+        </address>
+      </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-md-12">
+       <p>
+          <center>
+          <img alt="logo cnrs" style="height: 130px; margin-top: 10px;" src="{% static 'img/logos/logo_cnrs.svg' %}"/>
+          <img alt="logo iremus" style="height: 150px; margin-top: 10px;" src="{% static 'img/logos/logo_iremus.png' %}"/>
+          <img alt="logo sorbonne université" style="height: 80px; margin-top: 10px;" src="{% static 'img/logos/logo_su.png' %}"/>
+          <img alt="logo labri" style="height: 70px; margin-top: 10px;" src="{% static 'img/logos/logo_labri.png' %}"/>
+          <img alt="logo scrime-université bordeaux" style="height: 65px; margin-top: 10px;" src="{% static 'img/logos/logo_scrimeub.png' %}"/>
+          </center>
+        </p>
+      </div>
+    </div>
+
+
+    <!-- /.row -->
+
+    <!-- TO KEEP FOR LATER
+     <div class="row">
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">Find Out More!</a>
+          </div>
+        </div>
+      </div>
+    -->
+
+    <!-- /.row -->
+
+  </div>
+{% endblock %}
