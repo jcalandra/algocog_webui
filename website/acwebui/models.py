@@ -54,7 +54,7 @@ class comment(TimestampModel):
     musician = models.BooleanField(default=False)
     music_title = models.CharField(default='Music Title', max_length=150)
     comment = models.TextField(default='Laissez un commentaire...')
-    parameter = models.OneToOneField(parameter, on_delete=models.CASCADE)
+    parameter = models.OneToOneField(parameter, on_delete=models.CASCADE, default=parameter.objects.last())
 
 
 

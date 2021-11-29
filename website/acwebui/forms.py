@@ -14,3 +14,7 @@ class commentaryForm(ModelForm):
     class Meta:
         model = comment
         fields = ['music_title', 'comment']
+
+    def id_param(self):
+        self.save(commit=False)
+        self.parameter = parameter.objects.last()
