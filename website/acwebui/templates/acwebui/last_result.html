@@ -56,14 +56,14 @@
          <p> Vous pouvez laisser un commentaire sur les résultats obtenus avec le système sur l'oeuvre que vous souhaitez
          analyser. Pour rappel, un paramétrage différent donne une analyse différente. Nous vous encourageons à tester
          différents seuils si les résultats obtenus ne vous conviennent pas. Les seuils peuvent être très sensibles !</p>
-         <p>Si vous le souhaitez, vous pouvez laisser votre nom, prénom et mail afin que  l'on puisse vous recontacter,
+         <!--<p>Si vous le souhaitez, vous pouvez laisser votre nom, prénom et mail afin que  l'on puisse vous recontacter,
            mais ce n'est pas obligatoire.</p>
          <p>Les données collectées, à savoir votre nom, prénom, adresse mail, et votre statut en tant que musicien ou
            musicologue sont utilisées uniquement à des fins personnelles. Elles permettent de vous recontacter
            au besoin et de contextualiser votre commentaire. Seule Joséphine Calandra, développeuse de l'Algorithme
            Cognitif, a accès à ces données. Ces
            données seront supprimées à la fin de la thèse de Joséphine Calandra et vous pouvez la contacter
-           (josephine.calandra@labri.fr) pour demander la suppression de vos données.</p>
+           (josephine.calandra@labri.fr) pour demander la suppression de vos données.</p>-->
          <form method="POST" class = "post-form">
                 {%  csrf_token %}
                 {{ form.as_p }}
@@ -76,9 +76,11 @@
     <!-- /.row -->
     <div class="row">
           <h2> Diagramme Formel : </h2><br>
-          {% for element in formaldiagram.images %}
-          <img src = "/uploads/{{ element }}"><br><br>
-          <a class="save btn" href="/uploads/{{ element }}" download> Télécharger le Diagramme Formel </a><br><br>
+          {% for fd in formaldiagrams %}
+            {% if fd.parameter.id == element.id %}
+              <img src = "/uploads/photos/{{ fd.split }}"><br><br>
+              <a class="save btn" href="/uploads/photos/{{ fd.split }}" download> Télécharger le Diagramme Formel </a><br><br>
+            {% endif %}
           {% endfor %}
 
     </div>

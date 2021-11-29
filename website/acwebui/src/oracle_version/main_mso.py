@@ -7,6 +7,7 @@ from acwebui.src.parameters import PATH_OBJ
 from acwebui.src.parameters import Param
 from acwebui.models import parameter
 from acwebui.models import formalDiagram
+import shutil
 
 # import formal_diagram_mso as fd_mso
 
@@ -31,7 +32,6 @@ def mso_exec():
     print("Temps d execution de l'algorithme entier : %s secondes ---" % (time.time() - start_time_full))
 
     new_fd = []
-    FD = formalDiagram()
 
     # printing the results in the shell
     for i in range(len(mso_oracle[1])):
@@ -41,7 +41,13 @@ def mso_exec():
         print("link_" + str(i) + ": ", mso_oracle[1][i][1])
         print("history next : ", mso_oracle[1][i][2])
         print("matrix_next : ", mso_oracle[1][i][6])
-        FD.add(os.path.join(BASE_DIR, 'uploads/photos/') + str(i) + ".png")
+
+        name = os.path.join(BASE_DIR, 'uploads/photos_tmp/') + str(i) + ".png"
+        new_name = os.path.join(BASE_DIR, 'uploads/photos/') + str(parameter.objects.last().id) + "_level" + str(i) + ".png"
+        shutil.copy(name, new_name)
+
+        formalDiagram.objects.create(image=new_name, parameter=parameter.objects.last())
+
     plt.pause(10)
     plt.close('all')
 

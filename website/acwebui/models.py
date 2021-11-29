@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib import admin
+import os
 
 
 # Create your models here.
@@ -37,10 +38,12 @@ class parameter(TimestampModel):
 
 
 class formalDiagram(TimestampModel):
-    images = []
+    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=400)
+    parameter = models.ForeignKey(parameter, on_delete=models.CASCADE)
 
-    def add(self, image):
-        self.images.append(image)
+    def split(self):
+        name, format = os.path.splitext(self.image.name.split('/')[-1])
+        return name + format
 
 
 class comment(TimestampModel):
@@ -49,7 +52,10 @@ class comment(TimestampModel):
     email = models.EmailField(default='jean.dupont@mail.fr', max_length=254)
     musicologist = models.BooleanField(default=False)
     musician = models.BooleanField(default=False)
+    music_title = models.CharField(default='Music Title', max_length=150)
     comment = models.TextField(default='Laissez un commentaire...')
+    parameter = models.OneToOneField(parameter, on_delete=models.CASCADE)
+
 
 
 class parameterAdmin(admin.ModelAdmin):

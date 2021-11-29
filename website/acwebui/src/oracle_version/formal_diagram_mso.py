@@ -52,7 +52,7 @@ def print_formal_diagram_update(fig_number, level, formal_diagram, data_length):
         plt.savefig(path_results + file_name_pyplot)
     if EVOL_PRINT == 1:
         plt.pause(0.1)
-        name = os.path.join(BASE_DIR, 'uploads/photos/') + str(level) + ".png"
+        name = os.path.join(BASE_DIR, 'uploads/photos_tmp/') + str(level) + ".png"
         plt.savefig(name)
     return fig.number
 

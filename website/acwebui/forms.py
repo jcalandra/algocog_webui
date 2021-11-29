@@ -13,4 +13,4 @@ class parameterForm(ModelForm):
 class commentaryForm(ModelForm):
     class Meta:
         model = comment
-        fields = ['name', 'surname', 'email', 'musicologist', 'musician', 'comment']
+        fields = ['music_title', 'comment']

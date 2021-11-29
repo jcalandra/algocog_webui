@@ -78,7 +78,7 @@ def lastresult(request):
         form = commentaryForm()
         print("comment form does not work")
     return render(request, 'acwebui/last_result.html', {'element': parameter.objects.last(),
-                                                        'formaldiagram': formalDiagram.objects.last(),
+                                                        'formaldiagrams': formalDiagram.objects.all(),
                                                         'form': form})
 
 
